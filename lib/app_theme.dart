@@ -5,8 +5,10 @@ class AppTheme{
   static Color mavyColor = Color(0xFF171616);
   static Color text = Color(0xFFFCFBFB);
 
+
   static ThemeData ligthTheme = ThemeData(
-appBarTheme : AppBarTheme(
+      appBarTheme : AppBarTheme(
+        foregroundColor: AppTheme.text,
   backgroundColor:  PrimaryColor,
   titleTextStyle:  TextStyle(color:Colors.white,
   fontSize: 22,

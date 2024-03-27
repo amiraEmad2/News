@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news/category/category_item.dart';
+import 'package:news/category/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {
 
@@ -20,10 +22,14 @@ class CategoryScreen extends StatelessWidget {
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                    mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
+                    mainAxisSpacing: 24,
+                crossAxisSpacing: 24,
               ),
-              itemBuilder: (context,index)=>CategoryItem()
+              itemBuilder: (context,index)=>CategoryItem(
+                  categories :CategoryModel.categories[index],
+                  index : index,
+              ),
+              itemCount:CategoryModel.categories.length ,
 
             ),
           ),

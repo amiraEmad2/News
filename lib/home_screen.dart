@@ -17,6 +17,7 @@ static const String routeName ='/';
       child: Scaffold(
         drawer: HomeDrowar(),
         appBar: AppBar(
+
           title: Text('News App',),
           shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(20),
           ),
