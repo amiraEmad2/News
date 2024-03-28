@@ -4,8 +4,9 @@ import 'package:news/category/category_item.dart';
 import 'package:news/category/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {
-
-  @override
+const CategoryScreen({required this.onCaregorySelected});
+final void Function (CategoryModel)onCaregorySelected;
+@override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -25,9 +26,14 @@ class CategoryScreen extends StatelessWidget {
                     mainAxisSpacing: 24,
                 crossAxisSpacing: 24,
               ),
-              itemBuilder: (context,index)=>CategoryItem(
-                  categories :CategoryModel.categories[index],
-                  index : index,
+              itemBuilder: (context,index)=>InkWell(
+                onTap: (){
+                  onCaregorySelected(CategoryModel.categories[index]);
+                },
+                child: CategoryItem(
+                    categories :CategoryModel.categories[index],
+                    index : index,
+                ),
               ),
               itemCount:CategoryModel.categories.length ,
 
