@@ -28,13 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
         drawer: HomeDrawer(onDrawerItemSElected),
         appBar: AppBar(
           backgroundColor: AppTheme.PrimaryColor,
-          title: Text(
-              SelectedCategory !=null?
-             SelectedCategory!.title :
-              SelectDrawerItem==DrawerItem.Settings
-            ?'Settings'
-              :'News App'),
-          shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
 
         body:
